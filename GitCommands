@@ -1,0 +1,8 @@
+Create a new branch names "comprehensive_basic_assignement" locally
+git checkout -b comprehensive_basic_assignement 
+ 
+The changes are staged and committed 
+git add -all
+git commit -m "First Commit" 
+ 
+git push origin comprehensive_basic_assignement

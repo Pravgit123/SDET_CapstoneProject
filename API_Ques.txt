@@ -1,0 +1,19 @@
+import org.apache.poi.ss.usermodel.*
+def excelFile = new FileInputStream("path/to/your/excel/file.xlsx") 
+def workbook = WorkbookFactory.create(excelFile) 
+def sheet = workbook.getSheet("Sheet1") 
+def sheet = workbook.getShetAt(0)
+for (int rowIndex =0; rowIndex <=sheet.getLastRowNum();
+def currentRow = sheet.getRow(rowIndex)
+def name = currentRow.getcell(0).getStringCellValue()
+def name = currentRow.getcell(1).getStringCellValue()
+def name = currentRow.getcell(2).getStringCellValue()
+log.info("Name: ${name},Salary: ${salary}, Age: ${age}")
+}
+excelFile.close()
+
+def request = testRunner.testCase.testSteps["Your REST Request Test Step Name"].getHttpRequest()
+request.setRequestcontent(""{\"name\":\"$:{\name}\",\"Salary\":\"${salary}\",\"Age\":\"${age}\")
+def response = TestRunner.testCase.testSteps["Your REST Request Test Step Name"].run(testRunner,context)
+def responseData = response.getResponseContentAsString()
+log.info("API Response: $ {responseDate}")
